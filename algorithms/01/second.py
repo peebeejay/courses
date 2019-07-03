@@ -1,10 +1,15 @@
+# Challenge Problem 1.5 You are given as input an unsorted array of n distinct
+# numbers, where n is a power of 2. Give an algorithm that identifies the
+# second-largest number in the array, and that uses at most n+log2 n−2
+# comparisons. [Hint: What information do you have left over after
+# computing the largest number?]
+
 import random
 from collections import defaultdict
 
 comps = {}
 comps = defaultdict(lambda: [], comps)
 
-# Challenge Question 1.5
 
 def greatest(arr):
     if len(arr) <= 1:
@@ -29,7 +34,7 @@ def second_greatest(arr):
     return max(comps[greatest_num])
 
 # Runtime calculation for greatest:
-# =sigma(2^l, 0, log2(n)-1)
+# =Σ(2^l, l, 0, log2(n)-1)
 # =2^(log2(n)-1 = n-1
 #
 # Runtime calculation for max:
